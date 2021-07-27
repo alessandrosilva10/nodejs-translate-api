@@ -5,19 +5,17 @@ var app = express()
 
 app.use(cors());
 
-traslate = '';
-
 app.get("/translate", (req, res, next) => {
     var text = req.query.text;
     var from = req.query.from;
-
-    translatte(text, {to: from}).then(res => {
-        this.traslate = res.text;
+    translatte(text, {to: from}).then(response => {
+        console.log(response.text)
+        res.json(response.text);
     }).catch(err => {
         console.error(err);
     });
-    res.json( this.traslate);
-    });
+});
+    
 app.listen(3000, () => {
  console.log("Server running on port 30100");
 });
