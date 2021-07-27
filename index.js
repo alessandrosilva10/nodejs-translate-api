@@ -19,5 +19,5 @@ app.get("/translate", (req, res, next) => {
     res.json( this.traslate);
     });
 app.listen(3000, () => {
- console.log("Server running on port 3000");
+ console.log("Server running on port 30100");
 });
